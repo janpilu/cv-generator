@@ -1,6 +1,12 @@
 # CV Generator
 
-A clean, professional CV generator built with React and TypeScript.
+Tired of using Word or Google Docs to create your CV?
+Tired of having to cram your CV into a predefined template?
+Tired of not being able to express your life story in the beautiful syntax that is JSON?
+
+**This is the solution for you!**
+
+A clean, professional CV generator built with React and TypeScript using Vite.
 
 ## Features
 
@@ -8,7 +14,6 @@ A clean, professional CV generator built with React and TypeScript.
 - A4 format
 - PDF export
 - Page break preview
-- Responsive design
 
 ## Usage
 
