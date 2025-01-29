@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import "./App.css";
 import generatePDF from "react-to-pdf";
-import { cvData } from "./content-demo";
+import { cvData } from "./content";
 import { CV } from "./components/CV";
 
 function App() {
