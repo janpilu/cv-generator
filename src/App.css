@@ -325,8 +325,8 @@ button:hover {
 }
 
 .page {
-  min-height: 297mm;
-  padding: 30px;
+  min-height: 277mm;
+  padding: 10mm;
   position: relative;
 }
 
