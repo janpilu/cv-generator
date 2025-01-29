@@ -27,7 +27,7 @@ Then you can build the Docker image and run the container:
 docker build -t cv-generator .
 
 # Run the Docker container
-docker run -p 3000:3000 cv-generator
+docker run -p 8080:80 cv-generator
 ```
 
 Then open http://localhost:8080 in your browser.
@@ -38,11 +38,11 @@ For local development you need to install the dependencies and run the developme
 
 - Install dependencies:
   ```bash
-  npm install
+  yarn install
   ```
 - Run the development server:
   ```bash
-  npm run dev
+  yarn dev
   ```
 
 Don't forget to personalize the CV as mentioned above.
