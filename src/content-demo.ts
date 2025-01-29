@@ -80,6 +80,7 @@ export const cvData: CVData = {
           subtitle: "In Progress",
           content: [
             "Investigating novel approaches to natural language understanding",
+            "Collaborated with a team of 3 researchers",
           ],
         },
       ],
