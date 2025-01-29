@@ -1,6 +1,31 @@
+:root {
+  /* Primary colors */
+  --primary: #252525;
+  --primary-dark: #000;
+
+  /* Text colors */
+  --text-primary: #2c3e50;
+  --text-secondary: #34495e;
+  --text-muted: #7f8c8d;
+  --text-body: #555;
+
+  /* Background colors */
+  --bg-main: #f0f2f5;
+  --bg-white: white;
+  --bg-skill: #f8f9fa;
+
+  /* Border colors */
+  --border-light: #eee;
+
+  /* Shadow colors */
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-color-hover: rgba(0, 0, 0, 0.2);
+  --shadow-color-button: rgba(0, 0, 0, 0.3);
+}
+
 #root {
   min-height: 100vh;
-  background: #f0f2f5;
+  background: var(--bg-main);
   padding: 2rem;
   text-align: center;
   display: flex;
@@ -21,33 +46,44 @@
   width: 210mm; /* A4 width */
   min-height: 297mm; /* A4 height */
   margin: 0 auto;
-  padding: 30px;
-  background: white;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 0;
+  background: var(--bg-white);
+  box-shadow: 0 0 10px var(--shadow-color);
+  position: relative;
+}
+
+.cv-content.show-break::after {
+  content: "";
+  position: absolute;
+  top: 297mm; /* A4 height */
+  left: 0;
+  right: 0;
+  border-top: 2px dotted var(--primary);
+  pointer-events: none;
 }
 
 .cv-header {
   text-align: center;
   margin-bottom: 40px;
   padding-bottom: 20px;
-  border-bottom: 2px solid #eee;
+  border-bottom: 2px solid var(--border-light);
 }
 
 .cv-header h1 {
   margin: 0;
-  color: #2c3e50;
+  color: var(--text-primary);
   font-size: 2.5em;
 }
 
 .cv-header .title {
   font-size: 1.2em;
-  color: #3498db;
+  color: var(--primary);
   margin: 10px 0;
 }
 
 .contact-info {
   margin: 15px 0;
-  color: #666;
+  color: var(--text-muted);
 }
 
 .contact-info p {
@@ -59,8 +95,8 @@
 }
 
 .cv-section h2 {
-  color: #2c3e50;
-  border-bottom: 2px solid #3498db;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--primary);
   padding-bottom: 8px;
   margin-bottom: 20px;
   font-size: 1.5em;
@@ -83,7 +119,7 @@
   transform: translateX(-50%);
   width: 70%;
   height: 1px;
-  background-color: #eee;
+  background-color: var(--border-light);
 }
 
 .item-header {
@@ -102,20 +138,20 @@
 
 .item-title h3 {
   margin: 0;
-  color: #34495e;
+  color: var(--text-secondary);
   font-size: 1.1em;
   font-weight: 600;
 }
 
 .subtitle {
   margin: 0;
-  color: #7f8c8d;
+  color: var(--text-muted);
   font-size: 0.9em;
   text-align: left;
 }
 
 .duration {
-  color: #7f8c8d;
+  color: var(--text-muted);
   font-size: 0.9em;
   text-align: right;
   min-width: 120px;
@@ -131,7 +167,7 @@
 
 .item-content li {
   margin-bottom: 8px;
-  color: #555;
+  color: var(--text-body);
   line-height: 1.4;
   text-align: left;
   position: relative;
@@ -149,7 +185,7 @@
 }
 
 .skill-category h3 {
-  color: #34495e;
+  color: var(--text-secondary);
   margin-bottom: 10px;
   font-size: 1.1em;
 }
@@ -161,17 +197,17 @@
 }
 
 .skill-category li {
-  background: #f8f9fa;
+  background: var(--bg-skill);
   padding: 8px 15px;
   margin-bottom: 8px;
   border-radius: 4px;
-  color: #555;
+  color: var(--text-body);
   text-align: left;
 }
 
 button {
-  background: #3498db;
-  color: white;
+  background: var(--primary);
+  color: var(--bg-white);
   border: none;
   padding: 12px 24px;
   border-radius: 5px;
@@ -182,7 +218,7 @@ button {
 }
 
 button:hover {
-  background: #2980b9;
+  background: var(--primary-dark);
 }
 
 .fab-button {
@@ -192,11 +228,33 @@ button:hover {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: #3498db;
-  color: white;
+  background: var(--primary);
+  color: var(--bg-white);
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px var(--shadow-color-hover);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9em;
+  padding: 0;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.fab-button-break {
+  position: fixed;
+  bottom: 120px;
+  right: 40px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: var(--bg-white);
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--shadow-color-hover);
   transition: all 0.3s ease;
   display: flex;
   align-items: center;
@@ -208,8 +266,8 @@ button:hover {
 }
 
 .fab-button:hover {
-  background: #2980b9;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background: var(--primary-dark);
+  box-shadow: 0 6px 12px var(--shadow-color-button);
   transform: translateY(-2px);
 }
 
@@ -229,7 +287,85 @@ button:hover {
     box-shadow: none;
   }
 
+  .cv-content.show-break::after {
+    display: none;
+  }
+
   .fab-button {
+    display: none;
+  }
+
+  .page-break {
+    margin-top: 0; /* Remove margin in print */
+  }
+
+  /* Ensure page breaks work in different browsers */
+  .page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+}
+
+/* Add page break styles */
+.page-break {
+  break-before: page;
+  page-break-before: always;
+}
+
+.page {
+  min-height: 297mm;
+  padding: 30px;
+  position: relative;
+}
+
+@media print {
+  .page {
+    page-break-after: always;
+    break-after: page;
+    padding: 30px;
+  }
+
+  .page + .page {
+    margin-top: 0;
+  }
+
+  /* Ensure no content is split across pages */
+  .section-item {
+    break-inside: avoid;
+  }
+
+  .cv-section {
+    break-inside: avoid;
+  }
+
+  .skills-grid {
+    break-inside: avoid;
+  }
+}
+
+/* Add styles for the toggle button */
+.toggle-break-button {
+  position: fixed;
+  bottom: 40px;
+  right: 120px; /* Position next to FAB */
+  background: var(--text-primary);
+  color: var(--bg-white);
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 8px var(--shadow-color);
+  transition: all 0.3s ease;
+}
+
+.toggle-break-button:hover {
+  background: var(--text-secondary);
+  box-shadow: 0 6px 12px var(--shadow-color-button);
+  transform: translateY(-2px);
+}
+
+@media print {
+  .toggle-break-button {
     display: none;
   }
 }
