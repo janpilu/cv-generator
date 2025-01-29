@@ -106,5 +106,10 @@ export const cvData: CVData = {
       name: "Tools",
       skills: ["Git", "Docker", "AWS", "Linux", "MongoDB", "PostgreSQL"],
     },
+    {
+      name: "Languages",
+      skills: ["English", "Spanish"],
+      layout: "horizontal",
+    },
   ],
 };

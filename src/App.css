@@ -196,7 +196,19 @@
   margin: 0;
 }
 
-.skill-category li {
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skills-list .skills-grid {
+  row-gap: 0px;
+  column-gap: 8px;
+}
+
+.skill-category li,
+.skill-item {
   background: var(--bg-skill);
   padding: 8px 15px;
   margin-bottom: 8px;
@@ -362,10 +374,4 @@ button:hover {
   background: var(--text-secondary);
   box-shadow: 0 6px 12px var(--shadow-color-button);
   transform: translateY(-2px);
-}
-
-@media print {
-  .toggle-break-button {
-    display: none;
-  }
 }

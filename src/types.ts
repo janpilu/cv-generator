@@ -13,6 +13,7 @@ export interface CVSection {
 export interface SkillCategory {
   name: string;
   skills: string[];
+  layout?: "horizontal" | "vertical";
 }
 
 export interface CVData {
