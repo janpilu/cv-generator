@@ -1,21 +1,21 @@
-interface CVItem {
+export interface CVItem {
   name: string;
   subtitle?: string;
   duration?: string;
   content: string[];
 }
 
-interface CVSection {
+export interface CVSection {
   title: string;
   items: CVItem[];
 }
 
-interface SkillCategory {
+export interface SkillCategory {
   name: string;
   skills: string[];
 }
 
-interface CVData {
+export interface CVData {
   personalInfo: {
     name: string;
     title?: string;
@@ -28,5 +28,3 @@ interface CVData {
   sections: CVSection[];
   skills: SkillCategory[];
 }
-
-export type { CVData };
