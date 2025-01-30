@@ -3,6 +3,7 @@ import "./App.css";
 import generatePDF from "react-to-pdf";
 import { cvData } from "./content";
 import { CV } from "./components/CV";
+import { Download } from "@mui/icons-material";
 
 function App() {
   const targetRef = useRef<HTMLDivElement>(null);
@@ -14,13 +15,15 @@ function App() {
 
       <button
         className="fab-button"
-        onClick={() =>
+        onClick={() => {
           generatePDF(targetRef, {
             filename: "my-cv.pdf",
             page: { format: "a4" },
-          })
-        }
-      ></button>
+          });
+        }}
+      >
+        <Download />
+      </button>
 
       <button
         className="fab-button-break"
